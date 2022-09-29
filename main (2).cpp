@@ -1,11 +1,20 @@
-int MySqrt(int num){
-  register unsigned int temp, x;
-  if (num < 0){
-    num = -num;
-  }
-  for (temp = 0, x = 1u << (sizeof(unsigned int) * 4 - 1); x; x >>= 1) {
-    if ((temp | x) * (temp | x) <= num)
-      temp |= x;
-  }
-  return temp;
+#include <iostream>
+
+using namespace std;
+#include <iostream>
+ 
+int sqrt(int arg){
+    int sqr=0;
+    if (arg<0) cout<<"Доигрался!""\n";
+        else {
+            while (sqr*sqr<=arg){
+                sqr=sqr+1;
+            }
+        }return sqr-1;
+}
+int main()
+{
+    int arg;
+    cin>>arg;
+    cout << sqrt(arg);
 }
